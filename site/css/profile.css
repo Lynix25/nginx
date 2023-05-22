@@ -1,0 +1,22 @@
+.profile-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 0 0.5rem 0.25rem rgba(0, 0, 0, 0.055)!important;
+    
+}
+
+.profile-image{
+    background-color: var(--primary-color);
+    width: 6rem;
+}
+
+#identity-image img {
+    width: 100%;
+    align-items: center;
+}
+
+.contactable-table-data {
+    max-width: 5rem;
+    min-width: 3rem;
+}

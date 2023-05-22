@@ -1,0 +1,40 @@
+.agenda {
+    height: 60vmax;
+    overflow: hidden;
+    overflow-y: scroll;
+    padding: 0.5rem;
+}
+
+.task-card {
+    padding: 0.5rem;
+    margin-bottom: .5rem;
+}
+
+.day {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+
+.description {
+    display: inline-block;
+    width: 100%;
+    overflow: hidden; 
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+}
+.info {
+    text-align: end;
+}
+
+@media screen and (max-width: 735px) {
+    .container {
+        width: 80vmin;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .info {
+        text-align: start;
+    }
+}

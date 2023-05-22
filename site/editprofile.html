@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <title>In D'Kos</title>
+
+    <script src="js/library.js"></script>
+
+    <script defer type="module" src="js/editprofile.js"></script>
+</head>
+
+<body>
+    <form class="frame card p-4 mx-auto my-4" action="" method="put">
+        <div class="page-title my-4">
+            <div class="hover-text">
+                <span class="tooltip-text tooltip-top-title">Kembali</span>
+                <span id="back"><a href="./profile.html"><i class="fa fa-chevron-left"></i></a></span>
+            </div>
+            <h5 class="text-center m-0 w-100">Ubah Profil</h5>
+            <br/><br/>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6 p-0 pb-2 px-2">
+                    <label class="form-label" for="name">Nama</label>
+                    <input class="form-control" type="text" name="name" id="name" required disabled>
+                </div>
+                <div class="col-md-6 p-0 pb-2 px-2">
+                    <label class="form-label" for="alias">Panggilan</label>
+                    <input class="form-control" type="text" name="alias" id="alias">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 p-0 pb-2 px-2">
+                    <label class="form-label" for="phone">No. Telepon</label>
+                    <input class="form-control" type="phone" name="phone" id="phone" minlength="10" required>
+                </div>
+                <div class="col-md-6 p-0 pb-2 px-2">
+                    <label class="form-label" for="email">Email</label>
+                    <input class="form-control" type="email" name="email" id="email">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 p-0 pb-2 px-2">
+                    <label class="form-label" for="gender">Gender</label>
+                    <!-- <input class="form-control" type="text" id="gender" required disabled> -->
+                    <select id="gender" name="gender" class="form-select" required disabled>
+                        <option>Laki-laki</option>
+                        <option>Perempuan</option>
+                    </select>
+                </div>
+                <div class="col-md-6 p-0 pb-2 px-2">
+                    <label class="form-label" for="job">Profesi</label>
+                    <input class="form-control" type="text" name="job" id="job" required>
+                </div>
+            </div>
+            <div class="row pb-2 px-2">
+                <label class="form-label p-0" for="description">Keterangan Lain</label>
+                <textarea class="form-control" type="text" name="description" id="description" maxlength="150"></textarea>
+            </div>
+            <div class="row restrictedData">
+                <hr class="mt-4"> 
+                <div class="col-md-6 m-0 p-0">
+                    <div class="p-0 pb-2 px-2">
+                        <label class="form-label" for="married">Status</label>
+                        <!-- <input class="form-control" type="text" name="married" id="married" required disabled> -->
+                        <select id="married" name="married" class="form-select" required disabled>
+                            <option>Lajang</option>
+                            <option>Menikah</option>
+                        </select>
+                    </div>
+                    <div class="p-0 pb-2 px-2 room-container">
+                        <label class="form-label" for="room">Kamar yang Disewa</label>
+                        <input class="form-control" type="text" name="room" id="room" required disabled>
+                    </div>
+                    <div class="p-0 pb-2 px-2">
+                        <label class="form-label" for="role">Role</label>
+                        <!-- <input class="form-control" type="text" name="role" id="role" required disabled> -->
+                        <select id="role" name="role" class="form-select" required disabled>
+                            <option>Owner</option>
+                            <option>Admin</option>
+                            <option>Tenant</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6 m-0 p-0">
+                    <div class="pb-2 px-2">
+                        <label class="form-label" for="identityCardImage" id="identityCardImageLabel"></label>
+                        <input class="form-control mt-1" type="file" name="identityCardImage" id="identityCardImage" accept=".jpg, .png, .jpeg" required>
+                        <div class="text-center">
+                            <i class="fa fa-spinner fa-spin" hidden></i>
+                        </div>
+                        <img id="identityImage" alt="KTP" style="width: 96%;">
+                    </div>
+                </div>
+            </div> 
+        </div>
+
+        <div class="card-footer text-center">
+            <button id="saveButton" type="submit" class="btn btn-primary">Simpan</button>
+        </div>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+</body>
+</html>

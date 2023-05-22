@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <title>In D'Kos</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script src="js/library.js"></script>
+
+    <script defer type="module" src="js/registeruser.js"></script>
+</head>
+
+<body>
+    <form class="frame card p-4 mx-auto my-4" action="" method="post">
+        <div class="page-title my-4 align-items-center">
+            <div class="hover-text">
+                <span class="tooltip-text tooltip-top-title">Kembali</span>
+                <span id="back"><i class="fa fa-chevron-left"></i></span>
+            </div>
+            <h5 class="text-center m-0 w-100">Tambah Data User</h5>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col ps-0">
+                <label class="form-label" for="name">Nama</label>
+                <input class="form-control" type="text" name="name" id="name" value="Ryan Triyadi">
+            </div>
+
+            <div class="col pe-0">
+                <label class="form-label" for="alias">Alias</label>
+                <input class="form-control" type="text" name="alias" id="alias" value="Ryan">
+            </div>
+        </div>
+
+        <div>
+            <label class="form-label" for="role">Peranan</label>
+            <select class="form-select" name="role" id="role">
+                <option value="Tenant">Penyewa</option>
+            </select>
+        </div>
+
+        <div>
+            <label class="form-label" for="email">Email</label>
+            <input class="form-control" type="email" name="email" id="email" value="ryan_triyadi@gmail.com">
+        </div>
+
+        <div>
+            <label class="form-label" for="room">Kamar</label>
+            <select class="form-select" name="roomId" id="room">
+            </select>
+        </div>
+        <!-- 
+        <div>
+            <label class="form-label" for="account">Akun</label>
+            <select class="form-select" name="accountId" id="account">
+            </select>
+        </div> -->
+
+        <div>
+            <label class="form-label" for="phone">No Telepon</label>
+            <input class="form-control" type="tel" name="phone" id="phone" value="081934364916">
+        </div>
+
+        <div>
+            <label class="form-label" for="gender">Gender</label>
+            <select class="form-select" name="gender" id="gender">
+                <option value="Male">Laki - Laki</option>
+                <option value="Female">Perempuan</option>
+            </select>
+        </div>
+
+        <div>
+            <label class="form-label" for="job">Pekerjaan</label>
+            <input class="form-control" type="text" name="job" id="job" value="Mahasiswa">
+        </div>
+
+        <div>
+            <label class="form-label" for="description">Deskripsi</label>
+            <input class="form-control" type="text" name="description" id="description" maxlength="150" value="Deskripsi">
+        </div>
+
+        <div>
+            <label class="form-label" for="identityCardImage">Foto KTP</label>
+            <input class="form-control" type="file" name="identityCardImage" id="identityCardImage"
+                accept=".jpg, .png, .jpeg">
+            <div class="text-center">
+                <i class="fa fa-spinner fa-spin" hidden></i>
+            </div>
+            <img class="d-block m-auto" style="width: 70%;">
+
+        </div>
+
+        <div>
+            <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+
+    </form>
+
+</body>
+
+</html>

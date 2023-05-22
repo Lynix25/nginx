@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <title>In D'Kos</title>
+
+    <script src="js/library.js"></script>
+    <script defer type="module" src="js/createannouncement.js"></script>
+</head>
+
+<body>
+    
+    <form class="frame card w-100 p-4 my-4" action="" method="post">
+        <div class="page-title my-4">
+            <div class="hover-text">
+                <span class="tooltip-text tooltip-top-title">Kembali</span>
+                <span id="back"><i class="fa fa-chevron-left"></i></span>
+            </div>
+            <h5 class="text-center m-0 w-100">Tambah Pengumuman</h5>
+        </div>
+        <hr />
+        <div class="card-body">
+            <div class="mb-2">
+                <label class="form-label" for="title">Judul</label>
+                <input class="form-control form-control-lg" type="text" name="title" id="title" maxlength="25" placeholder="Judul pengumuman" required>
+            </div>
+            <div class="mb-2">
+                <label class="form-label" for="period">Masa Berlaku </label>
+                <input class="form-control form-control-lg" type="text" name="period" id="period" maxlength="25" placeholder="Masa pengumuman berlaku" required>
+            </div>
+            <div class="mb-2">
+                <label class="form-label" for="description">Detail Pemberitahuan</label>
+                <textarea class="form-control form-control-lg" type="text" name="description" id="description" value="" placeholder="Konten pengumuman" required></textarea>
+            </div>
+            <div>
+                <label class="form-label image" for="image"></label>
+                <input class="form-control form-control-lg" type="file" name="image" id="image" accept=".jpg, .png, .jpeg">
+                <div class="text-center">
+                    <i class="fa fa-spinner fa-spin" hidden></i>
+                </div>
+                <img class="d-block m-auto" style="width: 70%;">
+            </div>
+        </div>
+        <div class="card-footer text-center">
+            <button type="submit" class="btn btn-primary">Simpan</button>
+        </div>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+</body>
+</html>

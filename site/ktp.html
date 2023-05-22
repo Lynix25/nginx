@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <title>In D'Kos</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="js/library.js"></script>
+    <script defer type="module" src="js/ktp.js"></script>
+</head>
+
+<body>
+    <div class="frame card p-3">
+        <div class="page-title my-4">
+            <div class="hover-text">
+                <span class="tooltip-text tooltip-top-title">Kembali</span>
+                <span id="back"><a href="./profile.html"><i class="fa fa-chevron-left"></i></a></span>
+            </div>
+            <h3 class="text-center m-0 w-100">Kartu Identitas</h3>
+            <br /><br />
+        </div>
+        <!-- <div class="mb-2">
+            <div class="title">NIK</div>
+            <div class="border-bottom">36031202042010012</div>
+        </div> -->
+        <div class="mb-2">
+            <div class="title">Upload Foto KTP</div>
+            <img class="rounded" id="identity-image" alt="KTP" style="width: 100%;">
+        </div>
+        <form hidden action="" method="post">
+            <input class="form-control mb-2" type="file" name="identityCardImage" id="identityCardImage"
+                accept=".jpg, .png, .jpeg">
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Simpan Pembaharuan</button>
+        </form>
+        <button type="open-update" class="btn btn-primary">Perbaharui KTP</button>
+    </div>
+</body>
+
+</html>

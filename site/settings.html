@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <title>In D'Kos</title>
+
+    <script src="js/library.js"></script>
+    <script defer type="module" src="js/settings.js"></script>
+</head>
+
+<body>
+    <div class="frame card w-100 p-4 my-4">
+        <div class="page-title my-4">
+            <div class="hover-text">
+                <span class="tooltip-text tooltip-top-title">Kembali</span>
+                <span id="back"><a href="./profile.html"><i class="fa fa-chevron-left"></i></a></span>
+            </div>
+            <h3 class="text-center m-0 w-100">Pengaturan</h3>
+            <br /><br />
+        </div>
+        <div class="m-4">
+            <form method="put" action="">
+                <div id="room-settings">
+                    <div class="p-0 py-2">
+                        <div class="input-group-text">
+                            <h6 class="m-0 title">Pengaturan Kamar</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-10">
+                            <div class="title">Kamar Pribadi</div>
+                            <div class="description">
+                                <small>Atur kamar untuk pribadi, sehingga tidak disewakan untuk penyewa lain</small>
+                            </div>
+                        </div>
+                        <div class="col d-flex justify-content-end p-0">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input hover" type="checkbox" role="switch" name="shareRoom"
+                                    id="privateRoomSwitch">
+                                <label class="form-check-label" for="privateRoomSwitch"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div>
+                    <div class="p-0 py-2">
+                        <div class="input-group-text">
+                            <h6 class="m-0 title">Pengaturan Akun</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-10">
+                            <div class="title">Notifikasi</div>
+                            <div class="description"><small>Nyalakan notifikasi untuk mendapatkan pesan terkini dari
+                                    aplikasi</small></div>
+                        </div>
+                        <div class="col d-flex justify-content-end p-0">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input hover" type="checkbox" role="switch"
+                                    name="enableNotification" id="notificationSwitch">
+                                <label class="form-check-label" for="notificationSwitch"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <button class="btn btn-primary" type="remove-serviceworker">Remove Service Worker</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <title>In D'Kos</title>
+
+    <script src="js/library.js"></script>
+
+    <script defer type="module" src="js/service.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row d-flex justify-content-center align-items-center m-4">
+            <div class="page-title my-4">
+                <div class="hover-text">
+                    <span class="tooltip-text tooltip-top-title">Kembali</span>
+                    <span><a href="./home.html"><i class="fa fa-chevron-left"></i></a></span>
+                </div>
+                <h4 class="m-0">Kelola Layanan</h4>
+            </div>
+            <div class="row d-flex">
+                <div class="col-md-6">
+                    <div class="input-group-text mb-1 my-4">
+                        <h5 class="mt-2">Buat Layanan Baru</h5>
+                    </div>
+                    <form id="form" class="frame card p-4 m-0" action="" method="post">
+                        <div class="my-1">
+                            <label for="serviceName" class="form-label">Jenis Layanan</label>
+                            <!-- <input type="text" class="form-control" name="serviceName" id="serviceName" required> -->
+                            <select id="serviceName" name="serviceName" class="form-select">
+                                <!-- <option>Laundry</option>
+                                <option>Cleaning Room Service</option>
+                                <option>Other</option> -->
+                            </select>
+                        </div>
+                        <div class="my-1">
+                            <label for="variant" class="form-label">Varian</label>
+                            <input type="text" class="form-control" name="variant" id="variant" placeholder="Varian pengajuan/ jenis layanan lebih spesifik" required>
+                        </div>
+                        <div class="my-1">
+                            <label for="price" class="form-label">Harga</label>
+                            <input type="number" class="form-control" name="price" id="price" placeholder="Harga yang dikenakan" required>
+                        </div>
+                        <div class="my-1 quantity">
+                            <label for="quantity" class="form-label">Kuantitas</label>
+                            <input type="number" class="form-control" name="quantity" id="quantity" placeholder="Kuantitas untuk harga yang dikenakan">
+                        </div>
+                        <div class="my-1 units">
+                            <label for="units" class="form-label">Satuan</label>
+                            <input type="text" class="form-control" name="units" id="units" placeholder="Satuan kuantitas (kilo, buah, pasang, dll.)">
+                        </div>
+                        <div class="my-1 dueDate">
+                            <label for="dueDate" class="form-label">Batas Pembayaran Sejak Layanan Selesai Dikerjakan (dalam hari)</label>
+                            <input type="number" class="form-control" name="dueDate" id="dueDate" placeholder="Batas pembayaran layanan jika dikenakan biaya">
+                        </div>
+                        <div class="my-1 penalty">
+                            <label for="penalty" class="form-label">Denda</label>
+                            <input type="number" class="form-control" name="penalty" id="penalty" placeholder="Denda jika pembayaran melewati batas waktu">
+                        </div>
+                        <div class="card-footer text-end mt-2">
+                            <button class="btn btn-primary" type="submit">Buat</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6 frame m-0 my-4">
+                    <div class="input-group-text mb-1">
+                        <h5 class="mt-2">Layanan Tersedia</h5>
+                    </div>
+                    <ul>
+                        <table class="table table-primary table-striped" id="table1">
+                            <thead>
+                                <tr>
+                                    <th colspan="4" id="category1"></th>
+                                </tr>
+                                <tr class="text-center">
+                                    <th>Varian</th>
+                                    <th>Jumlah</th>
+                                    <th>Satuan</th>
+                                    <th>Harga</th>
+                                </tr>
+                            </thead>
+                            <tbody id="service-list-category1">
+                                <!-- <tr>
+                                    <td>${service.variant}</td>
+                                    <td class="text-center">${service.price}</td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                        <table class="table table-info table-striped" id="table2">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" id="category2"></th>
+                                </tr>
+                                <tr class="text-center">
+                                    <th>Varian</th>
+                                    <th>Harga</th>
+                                </tr>
+                            </thead>
+                            <tbody id="service-list-category2">
+                                <!-- <tr>
+                                    <td>${service.variant}</td>
+                                    <td class="text-center">${service.price}</td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                        <table class="table table-success table-striped" id="table3">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" id="category3"></th>
+                                </tr>
+                                <tr class="text-center">
+                                    <th>Varian</th>
+                                    <th>Harga</th>
+                                </tr>
+                            </thead>
+                            <tbody id="service-list-category3">
+                                <!-- <tr>
+                                    <td>${service.variant}</td>
+                                    <td class="text-center">${service.price}</td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                        <table class="table table-secondary table-striped" id="table4">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" id="category4"></th>
+                                </tr>
+                                <tr class="text-center">
+                                    <th>Varian</th>
+                                    <th>Harga</th>
+                                </tr>
+                            </thead>
+                            <tbody id="service-list-category4">
+                                <!-- <tr>
+                                    <td>${service.variant}</td>
+                                    <td class="text-center">${service.price}</td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+</body>
+</html>

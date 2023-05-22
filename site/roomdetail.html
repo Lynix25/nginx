@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <title>In D'Kos</title>
+
+    <script src="js/library.js"></script>
+    <script defer type="module" src="js/roomdetail.js"></script>
+    <style>
+        .input-group-text {
+            min-width: 100px;
+        }
+        .font-italic{
+            font-style: italic;
+            font-size: smaller;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame card p-4 mx-auto my-4">
+        <div class="page-title my-4">
+            <div class="hover-text">
+                <span class="tooltip-text tooltip-top-title">Kembali</span>
+                <span><a href="./roomlist.html"><i class="fa fa-chevron-left"></i></a></span>
+            </div>
+            <h5 class="text-center m-0 w-100">Detail Kamar</h5>
+        </div>
+        <hr/>
+        <div class="d-flex align-items-center">
+            <h5 class="my-2 me-2">Informasi Kamar</h5>
+            <div class="hover-text">
+                <span class="tooltip-text tooltip-top-toggle">Ubah Data Kamar</span>
+                <span><i id="edit" class="fa-solid fa-pencil" style="cursor: pointer;"></i></span>
+            </div>
+        </div>
+        <div class="d-flex row">
+            <div class="col-sm-6 mb-1 p-0 px-1">
+                <div class="input-group mb-1">
+                    <lable class="input-group-text">Kamar</lable>
+                    <div class="name form-control"></div>
+                </div>
+                <div class="input-group">
+                    <lable class="input-group-text">Kategori</lable>
+                    <div class="allotment form-control"></div>
+                </div>
+            </div>
+            <div class="col-sm-6 mb-1 p-0 px-1">
+                <div class="input-group">
+                    <lable class="input-group-text">Lokasi</lable>
+                    <div class="floor form-control"></div>
+                </div>
+            </div>
+        </div>
+        <div class="input-group mb-1 px-1">
+            <lable class="input-group-text">Status</lable>
+            <div class="status form-control fw-bold"></div>
+        </div>
+        <div class="input-group px-1">
+            <lable class="input-group-text">Deskripsi</lable>
+            <div class="description form-control"></div>
+        </div>
+        <hr>
+        <div class="d-flex align-items-center">
+            <h5 class="mt-2 me-2">Spesifikasi dan Fasilitas Kamar</h5>
+            <div class="hover-text">
+                <span id="add-facility" class="tooltip-text tooltip-top-toggle">Tambah Fasilitas</span>
+            </div>
+        </div>
+        <div class="d-flex row my-2" id="category-group1">
+            <div class="col-sm-6 p-1">
+                <div class="input-group-text d-flex justify-content-between">
+                    <h6 class="m-0" id="category1"></h6>
+                    <div class="hover-text">
+                        <span class="tooltip-text tooltip-top-toggle">Tambah Fasilitas</span>
+                        <button type="add-facility-detail-1" class="btn btn-sm p-0"><i class="fa fa-plus"></i></button>
+                    </div>
+                </div>
+                <ul class="p-1" id="kamar-tidur"></ul>
+            </div>
+            <div class="col-sm-6 p-1">
+                <div class="input-group-text d-flex justify-content-between">
+                    <h6 class="m-0" id="category2"></h6>
+                    <div class="hover-text">
+                        <span class="tooltip-text tooltip-top-toggle">Tambah Fasilitas</span>
+                        <button type="add-facility-detail-2" class="btn btn-sm p-0"><i class="fa fa-plus"></i></button>
+                    </div>
+                </div>
+                <ul class="p-1" id="kamar-mandi"></ul>
+            </div>
+        </div>
+        <div class="d-flex row my-2" id="category-group2">
+            <div class="col-sm-6 p-1">
+                <div class="input-group-text d-flex justify-content-between">
+                    <h6 class="m-0" id="category3"></h6>
+                    <div class="hover-text">
+                        <span class="tooltip-text tooltip-top-toggle">Tambah Fasilitas</span>
+                        <button type="add-facility-detail-3" class="btn btn-sm p-0"><i class="fa fa-plus"></i></button>
+                    </div>
+                </div>
+                <ul class="p-1" id="furniture"></ul>
+            </div>
+            <div class="col-sm-6 p-1">
+                <div class="input-group-text d-flex justify-content-between">
+                    <h6 class="m-0" id="category4"></h6>
+                    <div class="hover-text">
+                        <span class="tooltip-text tooltip-top-toggle">Tambah Fasilitas</span>
+                        <button type="add-facility-detail-4" class="btn btn-sm p-0"><i class="fa fa-plus"></i></button>
+                    </div>
+                </div>
+                <ul class="p-1" id="alat-elektronik"></ul>
+            </div>
+            <div class="col p-0 py-1">
+                <div class="input-group-text d-flex justify-content-between">
+                    <h6 class="m-0" id="category5"></h6>
+                    <div class="hover-text">
+                        <span class="tooltip-text tooltip-top-toggle">Tambah Fasilitas</span>
+                        <button type="add-facility-detail-5" class="btn btn-sm p-0"><i class="fa fa-plus"></i></button>
+                    </div>
+                </div>
+                <ul class="p-1" id="fasilitas-lain">
+                    <li id="no-item">-</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div class="d-flex align-items-center">
+            <h5 class="mt-2 me-2">Harga Sewa Kamar</h5>
+            <div class="hover-text">
+                <span class="tooltip-text tooltip-top-toggle">Tambah Data Harga</span>
+                <button type="add-price-detail" class="btn p-0"><i class="fa fa-plus"></i></button>
+            </div>
+        </div>
+        <table class="table table-striped text-center">
+            <thead>
+                <tr>
+                    <th scope="col">Kapasitas</th>
+                    <th scope="col">Harga</th>
+                    <th scope="col" colspan="2" class="aksi text-center">Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="price-data"></tbody>
+        </table>
+        <div class="card-footer mt-4 text-center">
+            <button type="delete" class="btn btn-danger">Hapus</button>
+            <button type="changeRoom" class="btn btn-success" hidden>Ajukan Pindah ke Kamar Ini</button>
+        </div>
+        <!-- <ul class="specifications">
+            <h3>Spesifikasi Kamar</h3> -->
+            <!-- <li>
+                <i class="fad"></i>
+                <div>2.5 x 2.1 meter</div>
+            </li>
+            <li>
+                <i class=""></i>
+                <div>Tidak termasuk listrik</div>
+            </li> -->
+        <!-- </ul>
+        <ul class="facilities"> -->
+            <!-- <li>
+                <i class="fad fa-"></i>
+                <div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </li> -->
+        <!-- </ul>
+        <ul class="rules"></ul>
+        <div class="notes"></div>
+        <ul class="public-facilities">
+        </ul> -->
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+</body>
+</html>

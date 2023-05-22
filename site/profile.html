@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <title>Profile</title>
+
+    <script src="js/library.js"></script>
+
+    <link rel="stylesheet" href="css/profile.css">
+    <script defer type="module" src="js/profile.js"></script>
+    <style>
+        .input-group-text {
+            min-width: 100px;
+        }
+
+        .font-italic {
+            font-style: italic;
+            font-size: smaller;
+        }
+
+        h7 {
+            font-weight: bolder;
+        }
+
+        .biodata {
+            overflow-wrap: break-word;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row m-0 px-5 pt-3">
+        <div class="col-lg-3 pt-0">
+            <div class="profile-box m-auto border p-4 my-3 rounded-3">
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                    <div class="profile-image ratio ratio-1x1 p-5 rounded-circle">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <i class="fa-solid fa-user fs-1"></i>
+                        </div>
+                    </div>
+                    <div id="name" class="mx-auto"></div>
+                </div>
+                <div class="mx-auto">
+                    <div id="name"></div>
+                    <div id="alias"></div>
+                </div>
+                <a class="mx-auto my-2" href="/editprofile.html">Ubah Profil</a>
+                <div>
+                    <hr class="my-2">
+                    <a href="/changepassword.html" class="d-flex justify-content-between align-items-center">Ubah
+                        Password
+                        <i class="fa-solid fa-angle-right"></i></a>
+                    <hr class="my-2">
+                    <a href="/settings.html" class="d-flex justify-content-between align-items-center">Pengaturan <i
+                            class="fa-solid fa-angle-right"></i></a>
+                    <hr class="my-2">
+                    <a href="/ktp.html" class="d-flex justify-content-between align-items-center">Kartu Identitas <i
+                            class="fa-solid fa-angle-right"></i></a>
+                    <hr class="my-2">
+                    <a href="/help.html" class="d-flex justify-content-between align-items-center">Bantuan <i
+                            class="fa-solid fa-angle-right"></i></a>
+                    <hr class="my-2">
+                    <!-- <div class="report">
+                        <a href="./report.html" class="d-flex justify-content-between align-items-center">Laporan <i
+                                class="fa-solid fa-angle-right"></i></a>
+                    </div> -->
+                    <div class="about">
+                        <a href="./about.html" class="d-flex justify-content-between align-items-center">Tentang Kos <i
+                                class="fa-solid fa-angle-right"></i></a>
+                        <hr class="my-2">
+                    </div>
+                    <a href="#" class="d-flex justify-content-between align-items-center" type="logout">Keluar <i
+                            class="fa-solid fa-angle-right"></i></a>
+                    <hr class="my-2">
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row">
+                <button type="show-tenant-info" class="btn col text-center user-info"></button>
+                <button type="show-roomOrAddress-info" class="btn col text-center roomOrAddress-info"></button>
+            </div>
+            <div id="tenant-information">
+                <div class="row border rounded mb-3 pb-3 biodata">
+                    <div class="p-3 rounded-top title" style="background-color: var(--primary-color);">
+                        Data Diri
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="m-1">
+                            <div class="title">Email</div>
+                            <div id="email">email</div>
+                        </div>
+                        <div class="m-1">
+                            <div class="title">Nomor Telepon</div>
+                            <div id="phone">phone</div>
+                        </div>
+                        <div class="m-1">
+                            <div class="title">Profesi</div>
+                            <div id="job">job</div>
+                        </div>
+                        <div class="m-1">
+                            <div class="title">Gender</div>
+                            <div id="gender">gender</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="m-1">
+                            <div class="title">Status</div>
+                            <div id="status">status</div>
+                        </div>
+                        <div class="m-1">
+                            <div class="title">Begabung Sejak</div>
+                            <div id="joinedOn">joinedOn</div>
+                        </div>
+                        <div class="m-1">
+                            <div class="title">Keterangan Lain</div>
+                            <div id="description">description</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row border rounded mb-3" id="contactable-information">
+                    <div class="d-flex justify-content-between align-items-center p-3 rounded-top title"
+                        style="background-color: var(--primary-color);">
+                        <div>Kontak Alternatif</div>
+                        <div class="hover-text">
+                            <span class="tooltip-text tooltip-top-title">Tambah</span>
+                            <button type="add-alternatif-contact" class="btn p-0"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <div class="col p-1 m-2 text-center text-muted" id="list-empty">
+                        Tidak ada data
+                    </div>
+                    <div class="col p-1 mx-2 mb-2 table-responsive-xl" id="list-not-empty">
+                        <table class="table table-striped table-hover m-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Nama</th>
+                                    <th scope="col">Relasi</th>
+                                    <th scope="col">No. Telepon</th>
+                                    <th scope="col">Alamat</th>
+                                    <th scope="col" colspan="2" class="text-center">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="list-data"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="roomOrAddress-information" class="row border rounded mb-3" hidden>
+                <div class="d-flex justify-content-between align-items-center p-3 rounded-top title"
+                    style="background-color: var(--primary-color);">
+                    Data Kos
+                </div>
+                <div id="address-info" class="row p-4">
+                    <div class="col-md-6 p-0 my-2 d-flex justify-content-center align-items-center">
+                        <img id="maps-img" src="./asset/maps.png" height="140px">
+                    </div>
+                    <div class="col-md-6 p-0 my-2">
+                        <h5 class="kosName text-center mb-4"></h5>
+                        <p class="mb-1 address"></p>
+                        <p class="mb-1 sub-district"></p>
+                        <p class="mb-1 city-province-country"></p>
+                        <hr>
+                        <h7 class="postal-code text-center"></h7>
+                    </div>
+                </div>
+                <div id="room-info" class="p-4" hidden>
+                    <div class="row">
+                        <div class="col-md-6 mb-1 p-0 px-1">
+                            <div class="input-group mb-1">
+                                <lable class="input-group-text input-group-text-lable">Nama Kamar</lable>
+                                <div class="name form-control"></div>
+                            </div>
+                            <div class="input-group">
+                                <lable class="input-group-text input-group-text-lable">Harga</lable>
+                                <div class="price form-control"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-1 p-0 px-1">
+                            <div class="input-group mb-1">
+                                <lable class="input-group-text input-group-text-lable">Lokasi</lable>
+                                <div class="floor form-control"></div>
+                            </div>
+                            <div class="input-group">
+                                <lable class="input-group-text input-group-text-lable">Status</lable>
+                                <div class="status form-control fw-bold"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <h7 class="m-0 mt-2">Spesifikasi dan Fasilitas Kamar</h7>
+                    <div class="d-flex flex-wrap row align-items-start my-2 gap-3" id="category-group1">
+                        <div class="col p-0 py-1">
+                            <div class="input-group-text">
+                                <h6 class="m-0" id="category1"></h6>
+                            </div>
+                            <ul class="p-1" id="kamar-tidur"></ul>
+                        </div>
+                        <div class="col p-0 py-1">
+                            <div class="input-group-text">
+                                <h6 class="m-0" id="category2"></h6>
+                            </div>
+                            <ul class="p-1" id="kamar-mandi"></ul>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-wrap row align-items-start my-2 gap-3" id="category-group2">
+                        <div class="col p-0 py-1">
+                            <div class="input-group-text">
+                                <h6 class="m-0" id="category3"></h6>
+                            </div>
+                            <ul class="p-1" id="furniture"></ul>
+                        </div>
+                        <div class="col p-0 py-1">
+                            <div class="input-group-text">
+                                <h6 class="m-0" id="category4"></h6>
+                            </div>
+                            <ul class="p-1" id="alat-elektronik"></ul>
+                        </div>
+                        <div class="col p-0 py-1">
+                            <div class="input-group-text">
+                                <h6 class="m-0" id="category5"></h6>
+                            </div>
+                            <ul class="p-1" id="fasilitas-lain">
+                                <li id="no-item">-</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- <hr> -->
+                    <!-- <h7 class="mt-2">Harga Sewa Kamar</h7>
+                    <table class="table table-striped text-center mt-2">
+                        <thead>
+                            <tr>
+                                <th scope="col">Kapasitas</th>
+                                <th scope="col">Harga</th>
+                            </tr>
+                        </thead>
+                        <tbody id="price-data"></tbody>
+                    </table> -->
+                    <hr>
+                    <div class="my-2 text-center">
+                        <button class="btn btn-primary" onclick="requestChangeRoom()">Ajukan Pindah Kamar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+</body>
+
+</html>

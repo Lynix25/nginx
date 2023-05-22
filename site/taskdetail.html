@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <title>In D'Kos</title>
+
+    <script src="js/library.js"></script>
+    <script defer type="module" src="js/taskdetail.js"></script>
+</head>
+
+<body>
+    <div class="frame card p-4 mx-auto my-4">
+        <div class="page-title my-4">
+            <div class="hover-text">
+                <span class="tooltip-text tooltip-top-title">Kembali</span>
+                <span><a href="./requesthistory.html"><i class="fa fa-chevron-left"></i></a></span>
+            </div>
+            <div class="text-center w-100">
+                <h5 class="text-center">Detail Pengajuan Layanan</h5>
+                <small class="id" style="font-style: italic;"></small>
+            </div>
+        </div>
+        <div class="card-body">
+            <!-- <div class="input-group mb-1">
+                <lable class="input-group-text px-2" style="width: 140px;">Kode Pengajuan</lable>
+                <div class="id form-control"></div>
+            </div> -->
+            <div>
+                <div class="row">
+                    <div class="col-sm-6 p-0">
+                        <b>Diajukan oleh</b>
+                        <p class="requesterUser"></p>
+                    </div>
+                    <div class="col-sm-6 p-0">
+                        <b>Info kamar</b>
+                        <p class="roomUser"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 p-0">
+                        <b>Diajukan pada</b>
+                        <p class="createdDate"></p>
+                    </div>
+                    <div class="col-sm-6 p-0">
+                        <b>Target pengerjaan</b>
+                        <p class="taskDate"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 p-0">
+                        <b>Status pengajuan</b>
+                        <p class="status"></p>
+                    </div>
+                    <div class="col-sm-6 p-0">
+                        <b>Selesai pada</b>
+                        <p class="finishedDate">-</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="alert p-0 px-2">
+                <div class="d-flex justify-content-between">
+                    <div class="fw-bold">Jenis layanan</div>
+                    <div class="service"></div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <div class="fw-bold">Varian</div>
+                    <div class="variant"></div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <div class="fw-bold">Jumlah</div>
+                    <input id="qty" type="number" class="border border-0 quantity text-end" disabled>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="fw-bold">Total Harga</div>
+                    <div class="price"></div>
+                </div>
+            </div>
+            <hr>
+            <div>
+                <div>
+                    <label class="form-label fw-bold" for="summary">Penjelasan Pengajuan</label>
+                    <textarea class="form-control" type="text" name="summary" id="summary" disabled></textarea>
+                </div>
+                <br>
+                <div>
+                    <label class="form-label fw-bold" for="notes">Catatan Penyelesaian</label>
+                    <textarea class="form-control" type="text" name="notes" id="notes" placeholder="Info status atau keterangan lainnya mengenai penyelesaian pengajuan" disabled></textarea>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center alert alert-warning m-0 mt-4">
+                <div class="fw-bold">Total tagihan</div>
+                <div id="final-price" class="text-end">Rp 0</div>
+            </div>
+        </div>
+        <div class="card-footer text-end">
+            <button type="reject" class="btn btn-danger">Tolak</button>
+            <button type="process" class="btn btn-primary">Terima</button>
+            <button type="update" class="btn btn-warning">Perbaharui Info</button>
+            <button type="finish" class="btn btn-success">Selesai</button>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+</body>
+</html>

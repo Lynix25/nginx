@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <title>In D'Kos</title>
+
+    <script src="js/library.js"></script>
+
+    <link rel="stylesheet" href="css/agenda.css">
+    <script defer type="module" src="js/agenda.js"></script>
+</head>
+
+<body>
+    <div class="row d-flex justify-content-center align-items-center m-4">
+        <div class="page-title mt-4 mb-2">
+            <div class="hover-text">
+                <span class="tooltip-text tooltip-top-title">Kembali</span>
+                <span id="back"><i class="fa fa-chevron-left"></i></span>
+            </div>
+            <h4 class="m-0">Agenda</h5>
+        </div>
+    </div>
+    <div class="container frame-max m-4 mx-auto">
+        <form class="d-flex align-items-center mb-2 row" role="search">
+            <div class="col-sm-6 p-0 px-4">
+                <h6 class="me-4">Cari Berdasarkan Tanggal:</h6>
+            </div>
+            <div class="col-sm-6 d-flex justify-content-center">
+                <div class="w-50">
+                    <input type="date" id="startDate" name="startDate" class="form-control"/>
+                </div>
+                <div class="mx-2 fs-4">-</div>
+                <div class="w-50">
+                    <input type="date" id="endDate" name="endDate" class="form-control"/>
+                </div>
+            </div>
+        </form>
+        <hr>
+        <ul class="agenda">
+            <!-- <li class="task">
+                <div class="day">1 Jan</div>
+                <ul class="task-list">
+                    <li class="task-card border rounded p-2">
+                        <div class="title">Tidak Ada Tugas</div>
+                    </li>
+                </ul>
+            </li> -->
+            <!-- <li class="task card-as-container-static p-3">
+                <div class="day m-0 px-2">Tanggal Kalender</div>
+                <ul class="task-list">
+                    <li class="task-card border rounded alert alert-info m-0 mt-2 p-3">
+                        <div class="d-flex justify-content-between row">
+                            <div class="title col-sm-6 p-0">Service Name: Variant</div>
+                            <div class="col-sm-6 p-0 info">
+                                <span class="badge badge-green">Nama Kamar</span>
+                                <span class="badge badge-blue">Status</span>
+                            </div>
+                        </div>
+                        <div class="description">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo commodi reprehenderit
+                            mollitia. Dicta
+                            laboriosam nesciunt molestias quo? Eligendi, id blanditiis!
+                        </div>
+                        <div class="text-end">
+                            <button type="reject" class="btn btn-sm btn-danger">Tolak</button>
+                            <button type="process" class="btn btn-sm btn-primary">Terima</button>
+                            <button type="update" class="btn btn-sm btn-warning">Perbaharui Info</button>
+                            <button type="finish" class="btn btn-sm btn-success">Selesai</button>
+                        </div>
+                    </li>
+                </ul>
+            </li> -->
+        </ul>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+</body>
+</html>

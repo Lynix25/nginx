@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In D'Kos</title>
+
+    <script src="js/library.js"></script>
+
+    <script defer type="module" src="js/createroom.js"></script>
+</head>
+
+<body>
+    <form class="frame card p-4 mx-auto my-4" action="" method="post">
+        <h5 class="text-center">Tambahkan Ruangan</h5>
+        <hr/>
+        <div>
+            <label class="form-label" for="name">Nama Ruangan</label>
+            <input class="form-control form-control-lg" type="text" name="name" id="name" value="Kamar 101">
+        </div>
+        <div>
+            <label class="form-label" for="floor">Lantai</label>
+            <input class="form-control form-control-lg" type="text" name="floor" id="floor" value="1">
+        </div>
+        <div>
+            <label class="form-label" for="description">Deskripsi</label>
+            <input class="form-control form-control-lg" type="text" name="description" id="description"
+                value="Deskripsi">
+        </div>
+        <!-- <div>
+            <label class="form-label" for="quota">Kuota</label>
+            <input class="form-control form-control-lg" type="text" name="quota" id="quota">
+            <button type="button" class="btn">+</button>
+        </div> -->
+        <div>
+            <label class="form-label" for="quota">Kuota</label>
+            <input class="form-control form-control-lg" type="text" name="quota" id="quota" value="1">
+        </div>
+        <div>
+            <label class="form-label" for="allotment">Kamar Untuk</label>
+            <input class="form-control form-control-lg" type="text" name="allotment" id="allotment" value="Laki - Laki">
+        </div>
+
+        <div class="mt-2">
+            <!-- Button trigger room price modal -->
+            <button type="add-price-detail" class="btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#addRoomPrice">+</button>
+        </div>
+
+        <!-- Button trigger facility modal -->
+        <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addFacility">+</button> -->
+
+        <!-- <ul class="room-details border rounded">
+            <div class="row">
+                <div class="col-4">Kapasitas</div>
+                <div class="col">Harga</div>
+            </div>
+            <li class="room-details-item row">
+                <label class="col-4 text-center" for="price1">1 Orang</label>
+                <input class="col form-control" type="text" name="" id="price1">
+                <button class="col-2 btn" type="button"><i class="fas fa-trash"></i></button>
+            </li>
+            <li class="room-details-item row">
+                <label class="col-4 text-center" for="price2">2 Orang</label>
+                <input class="col form-control" type="text" name="" id="price2">
+                <button class="col-2 btn" type="button"><i class="fas fa-trash"></i></button>
+            </li>
+        </ul> -->
+        <table class="table price-details">
+            <thead>
+                <h6 class="text-center">Detail Harga</h6>
+                <hr/>
+                <tr>
+                    <th scope="col">Kapasitas</th>
+                    <th scope="col">Harga</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody group-name="prices">
+                <tr>
+                    <td>
+                        <div input name="capacity" value=1>1 Orang</div>
+                    </td>
+                    <td>
+                        <div input name="price" value="1700000">1.700.000</div>
+                    </td>
+                    <td>
+                        <button class="btn" type="button"><i class="fa fa-edit"></i></button>
+                    </td>
+                    <td>
+                        <button class="btn" type="button"><i class="fa fa-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div input name="capacity" value=2>2 Orang</div>
+                    </td>
+                    <td>
+                        <div input name="price" value="1500000">1.500.000</div>
+                    </td>
+                    <td>
+                        <button class="btn" type="button"><i class="fa fa-edit"></i></button>
+                    </td>
+                    <td>
+                        <button class="btn" type="button"><i class="fa fa-trash"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ul group-name="details">
+            <!-- <li class="d-flex">
+                <div name="category">Spesifikasi</div>
+                <div name="name">Tidak termasuk listrik</div>
+                <div name="description">Deskripsi</div>
+            </li>
+            <li class="d-flex">
+                <div name="category">Spesifikasi</div>
+                <div name="name">Kamar Mandi Dalam</div>
+            </li>
+            <li class="d-flex">
+                <div name="category">Fasilitas kamar mandi</div>
+                <div name="name">Shower</div>
+            </li> -->
+        </ul>
+
+        <div>
+            <button class="btn btn-primary">Buat</button>
+        </div>
+    </form>
+
+    <!-- Room Price Modal -->
+    <form id="addRoomPrice" action="" method="post" class="modal fade" tabindex="-1" aria-labelledby="addRoomPriceLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="addRoomPriceLabel">Price Detail</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <input id="capacity" name="capacity" type="text" class="form-control" placeholder="Kapasitas"
+                            aria-label="Kapasitas" aria-describedby="basic-addon2">
+                        <span class="input-group-text" id="basic-addon2">Orang</span>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Rp</span>
+                        <input id="price" name="price" type="text" class="form-control" aria-label="Harga">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Add Price</button>
+                    <button type="update" class="btn btn-primary" data-bs-dismiss="modal">Update Price</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- Room Facility Modal -->
+    <form id="addFacility" action="" method="post" class="modal fade" tabindex="-1" aria-labelledby="addRoomFacilityLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="addRoomFacilityLabel">Fasilitas</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <input id="facility" name="facility" type="text" class="form-control" placeholder="Fasilitas">
+                    </div>
+                    <div class="mb-3">
+                        <input id="description" name="description" type="text" class="form-control"
+                            placeholder="Deskripsi">
+                    </div>
+                    <div class="mb-3">
+                        <select id="serviceName" name="serviceName" aria-placeholder="asdsad" class="form-select">
+                            <option value="" disabled selected>------- PILIH KATEGORI -------</option>
+                            <option value="specification">Spesifikasi</option>
+                            <option value="room-facility">Fasilitas kamar</option>
+                            <option value="bath-room-facility">Fasilitas kamar mandi</option>
+                            <option value="rules">Peraturan kamar ini</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Tambahkan Fasilitas</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</body>
+
+</html>

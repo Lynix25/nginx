@@ -1,0 +1,370 @@
+:root {
+    /* --primary-color: #C5E1E2;
+    --secondary-color : #fff;
+    --black-color: #0e111c;
+    --white-color: #fff; */
+    --badge-blue-color: #C2C1FF;
+    --badge-yellow-color: #FFF1B4;
+    --badge-green-color: #D7FEE0;
+    --badge-red-color: #FFE7ED;
+    --badge-grey-color: #c2c2c2;
+    --badge-text-blue-color: #3532E1;
+    --badge-text-yellow-color: #E56028;
+    --badge-text-green-color: #1DA42C;
+    --badge-text-red-color: #C62852;
+    --badge-text-grey-color: white;
+    
+    --body-color: #f7f7f7;
+
+    --main-background-buttontext: #515151;
+    --primary-color: #d8eefe;
+    --secondary-color: #fffffe;
+    --tertiary-color: #ef4565;
+    --black-color: #094067;
+    --white-color: #fffffe;
+    --paragraph: #5f6c7b;
+    --button-highlight: #3da9fc;
+
+    --font-size: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: var(--font-size);
+    color: var(--black-color);
+}
+
+.page-title {
+    display: flex;
+    align-items: center;
+}
+
+.page-title span {
+    margin: 10px;
+    cursor: pointer;
+}
+
+.form-control {
+    color: var(--black-color);
+}
+
+.toast {
+    opacity: 90% !important;
+    min-width: 25vmax !important;
+    width: 25vmax !important;
+}
+
+.toast-title, .toast-message {
+    color: var(--secondary-color);
+}
+
+input, textarea {
+    font-size: 14px !important;
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: var(--body-color);
+    margin-bottom:4rem;
+}
+
+p, .divider {
+    color: var(--paragraph);
+}
+
+/* h1, h2, h3, h4, h5, h6, label, input, div {
+    
+} */
+
+a {
+    text-decoration: none;
+    color: var(--black-color);
+    -webkit-tap-highlight-color: transparent;
+    font-size: var(--font-size);
+}
+
+ul {
+    list-style: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 auto 0 auto;
+}
+
+.navbar {
+    background-color: var(--primary-color);
+    box-shadow: 0 0 0.5rem 0.25rem #00000023!important;
+}
+
+.frame {
+    max-width: 90vmin;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.frame-max {
+    max-width: 90vmax;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.badge{
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+}
+
+.badge-blue{
+    color: var(--badge-text-blue-color);
+    background-color: var(--badge-blue-color);
+}
+
+.badge-red{
+    color: var(--badge-text-red-color);
+    background-color: var(--badge-red-color);
+}
+
+.badge-green{
+    color: var(--badge-text-green-color);
+    background-color: var(--badge-green-color);
+}
+
+.badge-yellow{
+    color: var(--badge-text-yellow-color);
+    background-color: var(--badge-yellow-color);
+}
+
+.badge-grey{
+    color: var(--badge-text-grey-color);
+    background-color: var(--badge-grey-color);
+}
+
+.row{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.title {
+    font-weight: 550;
+}
+
+.item{
+    /* "border", "rounded", "px-3", "py-1", "m-auto" */
+    border-radius: 0.375rem;
+    border: 1px solid var(--secondary-color);
+    padding: .25rem 1rem;
+    margin: auto;
+    margin-bottom: .5rem;
+}
+
+.item i {
+    font-size: 2.2rem;
+}
+
+.item svg {
+    font-size: 2.2rem;
+}
+
+.label{
+    display: inline-block;
+    border-radius: 50rem;
+    background-color: #1DA42C;
+    padding: 1%;
+}
+
+.order-room{
+    font-size: .8rem;
+    color: gray;
+}
+
+.order-date{
+    font-size: .8rem;
+    color: gray;
+}
+
+/* =========== TOOLTIP =========== */
+
+.tooltip-text {
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    width: max-content;
+    color: var(--secondary-color);
+    font-size: 12px;
+    background-color: var(--black-color);
+    border-radius: 4px;
+    padding: 0.5rem;
+}
+
+.hover-text:hover .tooltip-text {
+    visibility: visible;
+}
+
+.tooltip-top-toggle {
+    top: -35px;
+    right: -120%;
+}
+
+.tooltip-top-toggle2 {
+    top: -25px;
+    left: 50%;
+}
+
+.tooltip-top-icon {
+    top: -20px;
+    left: 10%;
+}
+
+.tooltip-top {
+    top: -28px;
+    left: -50%;
+}
+
+.tooltip-top-title {
+    top: -50px;
+    left: -50%;
+}
+
+.tooltip-bottom {
+    top: 25px;
+    left: -50%;
+}
+
+.tooltip-left {
+    top: -8px;
+    right: 120%;
+}
+
+.tooltip-right {
+    top: -8px;
+    left: 120%;
+}
+
+.hover-text {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+/* =========== NOTIFICATION =========== */
+.notif-readed{
+    background: var(--primary-color);
+}
+
+/* =============================== */
+
+.has-content {
+    visibility: hidden;
+}
+
+.has-content:has(*){
+    visibility: visible;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.hover {
+    cursor: pointer;
+}
+
+.input-group-text-lable {
+    width: 115px;
+}
+
+.card-as-container-static {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 8px #00000033;
+}
+
+.card-as-container {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 8px #00000033;
+}
+
+.card-as-container:hover {
+    box-shadow: 0 0 10px var(--button-highlight);
+    transition-duration: 0.5s;
+    transform: scale(1.025, 1.025);
+}
+
+.text-on-hover:hover {
+    box-shadow: 0 0 10px var(--button-highlight);
+    transition-duration: 0.1s;
+    transform: scale(1.2);
+    border-radius: 50%;
+}
+
+.small-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    overflow: hidden;
+    overflow-x: scroll;
+    margin: 4px 0 4px 0;
+    border-radius: 0.5rem;
+}
+
+.image-container {
+    height: 180px;
+    width: 250px;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    background-color: var(--primary-color);
+}
+
+.image-container img {
+    display: flex;
+    background-size: cover;
+    height: 140px;
+    margin-left: auto;
+    margin-right: auto;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    object-fit: contain;
+    background-color: var(--secondary-color);
+}
+
+.image-container figcaption {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 8px;
+    height: 40px;
+    width: 100%;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    font-weight: 500;
+    font-size: small;
+}

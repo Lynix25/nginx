@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <title>In D'Kos</title>
+
+    <style>
+        #maps-img {
+            border-radius: 50%;
+        }
+        #maps-img:hover {
+            box-shadow: 0 0 10px var(--button-highlight);
+            transition-duration: 0.5s;
+            transform: scale(1.025, 1.025);
+        }
+    </style>
+    <script src="js/library.js"></script>
+    <script defer type="module" src="js/about.js"></script>
+</head>
+
+<body>
+    <div class="frame card w-100 p-4 my-4">
+        <div class="page-title my-4">
+            <div class="hover-text">
+                <span class="tooltip-text tooltip-top-title">Kembali</span>
+                <span><a href="./profile.html"><i class="fa fa-chevron-left"></i></a></span>
+            </div>
+            <h3 class="text-center m-0 w-100">Tentang Kos</h3>
+            <br /><br />
+        </div>
+        <div class="m-4">
+            <div class="d-flex justify-content-center">
+                <img id="maps-img" src="./asset/maps.png" width="48%">
+            </div>
+            <div class="card-as-container row mt-4 p-4">
+                <h5 class="kosName text-center mb-4"></h5>
+                <p class="mb-1 address"></p>
+                <p class="mb-1 sub-district"></p>
+                <p class="mb-1 city-province-country"></p>
+                <hr class="mt-4">
+                <h7 class="postal-code text-center"></h7>
+            </div>
+            <div class="card-as-container row mt-4 p-4">
+                <h5 class="text-center mb-4">Kontak Pihak Kos</h5>
+                <ul id="ownerContact"></ul>
+                <hr id="separatorOwnerAndAdmin" class="mt-3">
+                <ul id="adminContact"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+</body>
+</html>

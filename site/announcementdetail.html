@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <title>In D'Kos</title>
+
+    <script src="js/library.js"></script>
+    <script defer type="module" src="js/announcementdetail.js"></script>
+</head>
+
+<body>
+    <div class="frame card w-100 p-4 my-4">
+        <div class="card-body">
+            <div class="page-title my-4">
+                <div class="hover-text">
+                    <span class="tooltip-text tooltip-top-title">Kembali</span>
+                    <span id="back"><a href="#"><i class="fa fa-chevron-left"></i></a></span>
+                </div>
+                <h3 class="text-center m-0 w-100 title"></h3>
+            </div>
+            <div class="d-flex row align-items-center justify-content-center my-4">
+                <img class="image" width="75%">
+            </div>
+            <div class="text-center period" style="font-style: italic;"></div>
+                <hr/>
+                <p class="text-align-justify description m-0 px-2"></p>
+            </div>
+            <div class="card-footer text-end mt-4">
+                <button class="btn btn-primary mx-2" id="editAnnouncement">Ubah</button>
+                <button class="btn btn-danger" id="deleteAnnouncement">Hapus</button>
+                <button class="btn btn-secondary" id="exitAnnouncement">Kembali</button>
+            </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+</body>
+</html>

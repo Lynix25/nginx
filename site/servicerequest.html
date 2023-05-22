@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <title>In D'Kos</title>
+
+    <style>
+        .total-price-container {
+            justify-content: end;
+        }
+
+        .inline-group {
+            justify-content: start;    
+        }
+
+        .charge {
+            width: 7rem !important;
+        }
+
+        @media screen and (max-width: 480px) {
+            .total-price-container {
+                justify-content: center;
+                margin: 8px 0;
+            }
+
+            .inline-group {
+                justify-content: center;
+            }
+        }
+    </style>
+    <script src="js/library.js"></script>
+    <script type="module" src="js/servicerequest.js"></script>
+</head>
+<body>
+    <form class="frame card p-4 mx-auto my-4" action="" method="put">
+        <div class="page-title my-4">
+            <div class="hover-text">
+                <span class="tooltip-text tooltip-top-title">Kembali</span>
+                <span id="back"><a href="#"><i class="fa fa-chevron-left"></i></a></span>
+            </div>
+            <h5 class="text-center m-0 w-100">Pengajuan Layanan</h5>
+            <br/><br/>
+        </div>
+        <div class="mb-2">
+            <label for="category" class="form-label">Jenis Layanan</label>
+            <select id="category" name="category" class="form-select">
+            </select>
+        </div>
+        <div class="mb-2">
+            <label for="serviceId" class="form-label">Varian</label>
+            <!-- <ul id="laundry-form" class="alert alert-info"> -->
+            <ul id="laundry-form">
+            </ul>
+            <select id="serviceId" name="serviceId" class="form-select">
+            </select>
+        </div>
+        <div class="card-body price-tag mb-2 alert alert-warning">
+            <label for="price">Layanan ini dikenakan biaya sebesar:</label>
+            <div id="price" name="price" class="fw-bold">Rp -</div>
+            <input id="charge" name="charge" hidden>
+        </div>
+        <div class="mb-2">
+            <label for="taskDate" class="form-label">Waktu Pengerjaan</label>
+            <input type="datetime-local" id="taskDate" name="taskDate" class="form-control" required>
+            <!-- <div class="row"> -->
+            <!-- <div class="input-group date col" data-provide="datepicker">
+                    <input type="text" name="waktu pengerjaan" class="form-control">
+                    <div class="input-group-addon input-group-text">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+                </div> -->
+            <!-- <div class="input-group col">
+                    <input type="text" name="waktu pengerjaan" class="form-control">
+                </div> -->
+            <!-- </div> -->
+        </div>
+        <div class="mb-2">
+            <label for="summary" class="form-label">Penjelasan Pengajuan</label>
+            <textarea type="text" class="form-control" name="summary" id="summary" placeholder="Alasan atau tujuan pengajuan" required></textarea>
+        </div>
+        <div class="card-footer text-center mt-4">
+            <button class="btn btn-primary" type="submit">Buat</button>
+        </div>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+</body>
+</html>

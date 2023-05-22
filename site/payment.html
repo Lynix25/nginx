@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js"
+        data-client-key="SB-Mid-client-cGMJz_4wOfQNmcWO"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <link rel="manifest" href="manifest.json">
+    <title>In D'Kos</title>
+
+    <style>
+        .cart {
+            max-height: 75vmin;
+            overflow: hidden;
+            overflow-y: scroll;
+        }
+    </style>
+    <script src="js/library.js"></script>
+    <script defer type="module" src="js/payment.js"></script>
+</head>
+
+<body>
+    <div class="row d-flex justify-content-center align-items-center m-4">
+        <div class="page-title mt-4 mb-2">
+            <div class="hover-text">
+                <span class="tooltip-text tooltip-top-title">Kembali</span>
+                <span id="back"><i class="fa fa-chevron-left"></i></span>
+            </div>
+            <h4 class="m-0">Bayar Tagihan</h5>
+        </div>
+    </div>
+    <form class="container frame-max mx-auto row d-flex" action="" method="post">
+        <div class="col-md-6 mb-4">
+            <div class="input-group-text mb-1">
+                <h5 class="mt-2">Daftar Tagihan</h5>
+            </div>
+            <div id="no-payment" class="border rounded py-4">
+                <div class="d-flex justify-content-center align-items-center">
+                    <img src="./asset/no_data.png" alt="Tidak ada data" height="100px" style="opacity: 50%;">
+                </div>
+                <h6 class="text-muted text-center fw-normal h-auto">Belum ada tagihan</h6>
+            </div>
+            <ul class="border rounded p-3 cart" hidden>
+                <!-- <li class="border-bottom mb-1">
+                    <div class="d-flex align-items-center mb-3">
+                        <input class="form-check-input m-2 fs-4" type="checkbox" name="asd" id="">
+                        <div>
+                            <div>Biaya Bulanan Kos Januari</div>
+                            <div>Batas bayar: 31/1/2022 19:00</div>
+                        </div>
+                    </div>
+                    <div class="text-end ">Rp 2.000.000</div>
+                </li> -->
+                <!-- <li class="border-bottom mb-1 d-flex align-items-center">
+                    <input class="form-check-input m-2 fs-4" type="checkbox" name="asdas" id="">
+                    <div style="width: 100%;">
+                        <div>Laundry Bulan January Minggu 1</div>
+                        <div>Batas bayar: 17/1/2022 19:00</div>
+                        <div class="text-end">Rp 50.000</div>
+                    </div>
+                </li> -->
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <div class="input-group-text mb-1">
+                <h5 class="mt-2">Ringkasan Pembayaran</h5>
+            </div>
+            <div class="container">
+                <div class="d-flex justify-content-between mt-4">
+                    <div>Jumlah layanan yang dibayar</div>
+                    <div class="total-item" data-selected="0">0</div>
+                </div>
+                <!-- <div class="d-flex justify-content-between">
+                    <div>Total Denda</div>
+                    <div>Rp0</div>
+                </div> -->
+                <hr>
+                <div>
+                    <div class="d-flex justify-content-between mt-4">
+                        <div class="fs-4">Total Tagihan</div>
+                        <div data-total-price="0" class="total-price">-</div>
+                    </div>
+                    <div class="d-flex justify-content-end align-items-center mt-4">
+                        <button type="pay" class="btn btn-primary border">Bayar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

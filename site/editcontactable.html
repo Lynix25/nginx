@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <title>In D'Kos</title>
+
+    <script src="js/library.js"></script>
+
+    <script defer type="module" src="js/editcontactable.js"></script>
+</head>
+
+<body>
+    <div class="frame card w-100 p-4 pb-0 mt-4">
+        <div class="page-title my-4">
+            <div class="hover-text">
+                <span class="tooltip-text tooltip-top-title">Kembali</span>
+                <span id="back"><a href="./profile.html"><i class="fa fa-chevron-left"></i></a></span>
+            </div>
+            <h5 class="text-center m-0 w-100">Ubah Data Kontak Alternatif</h5>
+            <br/><br/>
+        </div>
+        <div class="m-4">
+        <form method="put" action="">
+            <div class="row">
+                <div class="col w-50">
+                    <div class="col p-0 pb-2">
+                        <label class="form-label" for="name">Nama</label>
+                        <input class="form-control" type="text" name="name" id="name" required>
+                    </div>
+                    <div class="col p-0 pb-2">
+                        <label class="form-label" for="relation">Relasi</label>
+                        <input class="form-control" type="text" name="relation" id="relation" required>
+                    </div>
+                    <div class="col p-0 pb-2">
+                        <label class="form-label" for="phone">No. Telepon</label>
+                        <input class="form-control" type="number" name="phone" id="phone" minlength="10" required>
+                    </div>
+                </div>
+                <div class="col">
+                    <label class="form-label" for="address">Alamat</label>
+                    <textarea class="form-control" type="text" name="address"id="address" required></textarea>
+                </div>
+            </div>
+
+            <div class="card-footer text-center mt-4">
+                <button type="submit" class="btn btn-primary px-5">Simpan</button>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+</body>
+</html>

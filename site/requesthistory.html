@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <title>In D'Kos</title>
+
+    <style>
+        .item-card {
+            background-color: rgba(222, 242, 255, 0.685);
+        }
+    </style>
+
+    <script src="js/library.js"></script>
+    <script defer type="module" src="js/requesthistory.js"></script>
+</head>
+
+<body>
+    <div class="row d-flex justify-content-center align-items-center m-4">
+        <div class="page-title mt-4 mb-2">
+            <div class="hover-text">
+                <span class="tooltip-text tooltip-top-title">Kembali</span>
+                <span id="back"><i class="fa fa-chevron-left"></i></span>
+            </div>
+            <h4 class="m-0">History Pengajuan Layanan</h5>
+        </div>
+    </div>
+    <div class="container frame-max mx-auto px-lg-4">
+        <ul id="request-list" class="card-body">
+            <div class="text-center w-100 p-2 no-data">
+                <img src="./asset/no_data.png" alt="Tidak ada data" height="100px" style="opacity: 50%;">
+                <p>Belum ada data</p>
+            </div>
+            <!-- <li class="border rounded px-3 py-1 m-auto" onclick="e => {
+                toTaskDetail(e)}">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <div class="order-room">Nama Kamar</div>
+                        <div class="order-date">1 Jan 2022</div>
+                    </div>
+                    <div class="badge badge-blue">Dalam Pengerjaan</div>
+                </div>
+                <hr style="margin: .5rem 0px;">
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex">
+                        <div class="text-center">
+                            <i class="fa-solid fa-toilet"></i>
+                        </div>
+                        <div class="">
+                            <div>Sedot Toilet Mampet</div>
+                            <div>Permintaan pengerjaan: 1/1/2022 19:00</div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <button class="btn bg-primary">Komplain</button>
+                    </div>
+                </div>
+            </li> -->
+        </ul>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+</body>
+</html>

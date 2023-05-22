@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <title>In D'Kos</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/library.js"></script>
+    <link rel="stylesheet" href="css/home.css">
+    <script defer type="module" src="js/home.js"></script>
+</head> 
+
+<body>
+    <div class="row m-4" id="content">
+        <div class="col-lg-6">
+            <!-- Greetings -->
+            <div>
+                <h3 class="greetings1 fw-bold">UPDATED Selamat datang di aplikasi In D'Kos</h3>
+                <h5 class="greetings2 mb-2 text-muted fw-normal">Sahabat sejati kos-kosan Anda</h5>
+            </div>
+            <br>
+
+            <!-- Content 1: Admin/Tenant -->
+            <div id="announcement-content">
+                <div id="carousel-offline" class="carousel carousel-dark div-shadow slide" data-ride="carousel">
+                    <div class="carousel-indicators align-items-end">
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="img-no-text" src="./asset/no_announcement.png" alt="Belum ada pengumuman">
+                        </div>
+                    </div>
+                </div>
+                <div id="carousel" class="carousel carousel-dark div-shadow slide" data-ride="carousel" hidden>
+                    <div class="carousel-inner" id="announcement-list"></div>
+                </div>
+            </div>
+
+            <!-- Content 2: Tenant -->
+            <div class="summary flex-column my-3 div-shadow">
+                <div class="d-flex justify-content-between align-items-center lh-1">
+                    <div class="fw-bold room-name payment-label"></div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mt-1">
+                    <div class="fw-bold payment-label-2">Total Tagihan</div>
+                    <a href="/payment.html" class="d-flex align-items-center text-end">
+                        <div class="payment-label me-3 fw-bold">Rp <span class="payment-label unpaid-total">0</span>
+                        </div>
+                        <i class="payment-label fa-solid fa-angle-right fw-bold"></i>
+                    </a>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mt-2">
+                    <div class="d-flex">
+                        <span class="due-date me-2">Bayar sebelum: </span>
+                    </div>
+                    <button class="btn btn-sm btn-light p-0 px-4 fw-bold pay"
+                        style="color: var(--black-color);">Bayar</button>
+                </div>
+            </div>
+            <!-- Content 1-2: Owner/Admin -->
+            <div class="card-as-container-static chart mb-3">
+                <canvas class="task-chart"></canvas>
+            </div>
+            <div class="card-as-container-static chart">
+                <canvas class="processed-chart"></canvas>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <!-- Content 3: Tenant -->
+            <div class="menu-tenant">
+                <div class="m-0 mt-4 w-100 d-flex align-items-center justify-content-end" style="height: 50px;">
+                    <h4 class="m-2">Menu ini memudahkan untuk akses cepat</h4>
+                </div>
+                <div class="menu-list gap-3 row-cols-lg-6 row row-cols-4 my-4">
+                    <!-- <a href="./announcementmenu.html" class="menu-item">
+                        <i class="fa-solid fa-newspaper"></i>
+                        <span class="text-center">Pengumuman</span>
+                    </a> -->
+                    <a href="./servicerequest.html" class="menu-item">
+                        <i class="fa-solid fa-sticky-note"></i>
+                        <span class="text-center">Ajukan Layanan</span>
+                    </a>
+                    <a href="./requesthistory.html" class="menu-item">
+                        <i class="fa-solid fa-tasks"></i>
+                        <span class="text-center">Histori Layanan</span>
+                    </a>
+                    <a href="./payment.html" class="menu-item">
+                        <i class="fa-solid fa-money-bill-transfer"></i>
+                        <span class="text-center">Bayar Tagihan</span>
+                    </a>
+                    <a href="/paymenthistory.html" class="menu-item">
+                        <i class="fa-solid fa-money-bill-transfer"></i>
+                        <span class="text-center">Histori Pembayaran</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Content 3: Owner/Admin -->
+            <div class="menu-admin">
+                <div class="m-0 my-4 w-100 text-end justify-content-end" style="height: 50px;">
+                    <h4>Menu ini memudahkan untuk mengelola kosan</h4>
+                </div>
+                <div class="menu-list gap-3 row-cols-lg-6 row row-cols-4 my-2">
+                    <a href="./agenda.html" class="menu-item">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <span class="text-center">Agenda</span>
+                    </a>
+                    <a href="/requesthistory.html" class="menu-item">
+                        <i class="fa-solid fa-tasks"></i>
+                        <span class="text-center">Histori Layanan</span>
+                    </a>
+                    <a href="/paymenthistory.html" class="menu-item">
+                        <i class="fa-solid fa-money-bill-transfer"></i>
+                        <span class="text-center">Histori Pembayaran</span>
+                    </a>
+                    <a href="./listuser.html" class="menu-item">
+                        <i class="fa-solid fa-users"></i>
+                        <span class="text-center">Penghuni Kos</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Content 4: Tenant & Owner/Admin -->
+            <div>
+                <div class="d-flex align-items-end">
+                    <h4 class="m-0 mt-4 text-end w-100 taskOrRequest-label">List Pengajuan Layanan</h4>
+                </div>
+                <br>
+                <div class="div-shadow card-as-container-static recent-taskOrRequest">
+                    <div id="no-taskOrRequest" class="py-4">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <img src="./asset/no_data.png" alt="Tidak ada data" height="100px" style="opacity: 50%;">
+                        </div>
+                        <h6 class="text-muted text-center fw-normal h-auto">Belum ada data</h6>
+                    </div>
+                    <ul id="list-taskOrRequest" class="px-4 py-3" hidden></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+</body>
+
+</html>
