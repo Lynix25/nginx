@@ -1,4 +1,4 @@
-export const END_POINT = "https://7fb0-2001-448a-20a0-f164-29a3-5fa7-7583-da43.ngrok-free.app";
+export const END_POINT = "https://fdc0-2001-448a-20a0-f164-29a3-5fa7-7583-da43.ngrok-free.app";
 export const SECRET = "indekossecret";
 export const SERVICE_WORKER = "/serviceworker.js"
 export const WEB_CACHE = ["indkost-cache-data", "indkost-cache-v1"];
